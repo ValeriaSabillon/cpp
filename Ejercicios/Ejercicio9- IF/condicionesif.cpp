@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     cin>>numero;
     cout<<endl;
     if(numero==numeroSecreto){
-        cout<<"Adivinaste el numero secreto;"<<numero;
+        cout<<"Adivinaste el numero secreto:"<<numero;
     }else{
         cout<<"No adivinaste";
     }
