@@ -6,11 +6,9 @@ int main(int argc, char** argv) {
 	
 	int a=5;
 	int b=2;
-	while(a>b){
+	while(a>b && a>c){
 		cout<<"Ingrese el valor de a:"<<endl;
 		cin>>a;
-		
-		
 	}
 	cout<<endl;
 	cout<<"Saliste del ciclo";
