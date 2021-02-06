@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 
-string productos[5][3]={
-  {"001", "iphone X","0" },          
-  {"002", "Laptop Dell" ,"5"},          
-  {"003", "Monitor Samsung","2" },          
-  {"004", "Mouse","100" },          
-  {"005", "HeadSet","25" }        
+string productosDeBelleza[5][4]={
+  {"001", "Sombras","20","10" },          
+  {"002", "Rimel" ,"90","32"},          
+  {"003", "Lipstick","20","40" },          
+  {"004", "Base","300" ,"5"},          
+  {"005", "Delineador","60","0" }        
 };
 
 void listarProductos(){
@@ -19,18 +19,31 @@ void listarProductos(){
 
 	for(int i=0;i<5;i++)
 	{
-	cout<<productos[i][0]<<" | "<<productos[i][1]<<" | "<<productos[i][2]<<endl;
+	cout<<productosDeBelleza[i][0]<<" | "<<productosDeBelleza[i][1]<<" | "<<productosDeBelleza[i][2]<<" | "<<productosDeBelleza[i][3]<<" | "<<endl;
 	}
 }
 
 void movimientoInventario(string codigo, int cantidad,string tipoMovimiento){
 	for(int i=0;i<5;i++)
 	{
-		if(productos[i][0]==codigo){
+		if(productosDeBelleza[i][0]==codigo){
 			if (tipoMovimiento=="+"){
-		       productos[i][2]= to_string(stoi(productos[i][2]) + cantidad);
+		       productosDeBelleza[i][2]= to_string(stoi(productosDeBelleza[i][2]) + cantidad);
 			}else{
-		 		productos[i][2]= to_string(stoi(productos[i][2]) - cantidad);
+		 		productosDeBelleza[i][2]= to_string(stoi(productosDeBelleza[i][2]) - cantidad);
+		 	}
+		}
+	}
+	
+}
+void movimientoPrecio(string codigo, int precio,string tipoMovimiento){
+	for(int i=0;i<5;i++)
+	{
+		if(productosDeBelleza[i][0]==codigo){
+			if (tipoMovimiento=="+"){
+		       productosDeBelleza[i][3]= to_string(stoi(productosDeBelleza[i][3]) + precio);
+			}else{
+		 		productosDeBelleza[i][3]= to_string(stoi(productosDeBelleza[i][3]) - precio);
 		 	}
 		}
 	}
@@ -72,6 +85,40 @@ void salidaDeInventario(){
 
     movimientoInventario(codigo,cantidad,"-");
 }
+void ajustePositivoDeInventario(){
+	string codigo="";
+	int precio=0;
+	
+	system("cls");
+	cout<<endl;
+	cout<<"Ajuste Positivo De Inventario"<<endl;
+	cout<<"**********************************"<<endl;
+    cout<<"Ingrese el codigo del productos:";
+	cin>>codigo;
+	cout<<endl;
+	cout<<"Ingrese el precio del producto producto:";
+	cin>>precio;
+	cout<<endl;
+
+    movimientoPrecio(codigo,precio,"+");
+}
+void ajusteNegativoDeInventario(){
+	string codigo="";
+	int precio=0;
+	
+	system("cls");
+	cout<<endl;
+	cout<<"Ajuste Negativo de inventario"<<endl;
+	cout<<"**********************************"<<endl;
+    cout<<"Ingrese el codigo del productos:";
+	cin>>codigo;
+	cout<<endl;
+	cout<<"Disminuya el precio del producto:";
+	cin>>precio;
+	cout<<endl;
+
+    movimientoPrecio(codigo,precio,"-");
+}
 
 
 
@@ -87,9 +134,11 @@ int main(int argc, char const *argv[])
     cout<<"*********************";
     cout<<endl;
     cout<<endl;
-    cout<<"1- Productos"<<endl;
-    cout<<"2- Ingreso de Inventario"<<endl; 
-    cout<<"3- Salida de Inventario"<<endl;
+    cout<<"1- Productos De Belleza"<<endl;
+    cout<<"2- Ingrese la cantidad de producto al Inventario"<<endl; 
+    cout<<"3- Disminuya la cantidad de producto al Inventario"<<endl;
+    cout<<"4- Ingrese el precio al que esta el producto -- Ajuste Positivo"<<endl;
+    cout<<"5- Disminuya el precio al que esta el producto -- Ajuste Negativo"<<endl;
     cout<<"0- Salir"<< endl;                                                        
     
     cout<<"Ingrese una opcion del menu:";
@@ -106,6 +155,12 @@ int main(int argc, char const *argv[])
            break;
        case 3:
            salidaDeInventario();
+           break;
+        case 4:
+           ajustePositivoDeInventario();
+           break;
+        case 5:
+           ajusteNegativoDeInventario();
            break;
        default:
            break;
