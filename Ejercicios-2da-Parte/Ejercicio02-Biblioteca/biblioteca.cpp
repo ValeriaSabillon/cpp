@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
             char continuar='n';
             while(true){
                 system ("cls");
-                cout<<"Nose encontro el libro que busca.Desea continuar? S/N";
+                cout<<"Nose encontro el libro que busca.Desea continuar? S/N:";
                 cin>>continuar;
                 if(continuar=='s'||continuar=='S'){
                     break;
