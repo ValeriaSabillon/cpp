@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
          transform(buscar.begin(),buscar.end(),buscar.begin(),::tolower);
          transform(autorEnminuscula.begin(),autorEnminuscula.end(),autorEnminuscula.begin(),::tolower);
          if(libroEnminuscula.find(buscar)!=string::npos || autorEnminuscula.find(buscar)!=string::npos){
-             cout<<"Autor encontrado:"<<autor<<"  Libro encontrado:"<<libro<<endl<<"\n";
+             cout<<"Autor encontrado:"<<autor<<"   Libro encontrado:"<<libro<<endl<<"\n";
 
              cout<<"\tTambien te sugerimos estos libros:"<<endl;
              int sugerencia1=rand()%38+1;
