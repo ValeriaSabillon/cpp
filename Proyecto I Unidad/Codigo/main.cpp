@@ -6,12 +6,11 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    
     int opcion=0;
     cout<<"**************"<<endl;
     cout<<"MENU DE JUEGOS"<<endl;
     cout<<"**************"<<endl;
-    cout<<"Ingrese un numero del menu para seleccionar un juego: ";
+    cout<<"Ingrese un numero del menu para seleccionar un juego ya sea (1 o 2): ";
     cin>>opcion;
     system("cls");
 
