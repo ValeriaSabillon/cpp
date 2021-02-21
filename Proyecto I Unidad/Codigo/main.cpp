@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     cout<<"**************"<<endl;
     cout<<"MENU DE JUEGOS"<<endl;
     cout<<"**************"<<endl;
-    cout<<"Ingrese un numero del menu para seleccionar un juego ya sea (1 o 2): ";
+    cout<<"Ingrese un numero del menu para seleccionar un juego ya sea (1  o  2): ";
     cin>>opcion;
     system("cls");
 
